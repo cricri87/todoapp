@@ -1,0 +1,7 @@
+<h1>All Todos</h1>
+
+<% @todos.each do |todo| %>
+  <h3><%= link_to "#{todo.name}", todo_path(todo.id) %></H3> <p><%= "#{todo.description}" %></p>
+<% end %>
+
+<%= link_to 'Home', root_path %>
