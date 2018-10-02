@@ -1,4 +1,4 @@
-<h1>All Todos</h1>
+<h1>You have <%= @todos.count %> Todos</h1>
 <p><%= link_to 'Add A Todo', new_todo_path %></p>
 <table>
   <tr>
@@ -8,8 +8,8 @@
 
   <% @todos.each_with_index do |todo, index| %>
     <tr>
-      <td> <%= link_to "#{index + 1} #{todo.name}", todo_path(todo.id) %></td>
-      <td> <%= "#{todo.description}" %></td>
+      <td> <%= link_to "#{index + 1} #{todo.name.capitalize}", todo_path(todo.id) %></td>
+      <td> <%= "#{todo.description.capitalize}" %></td>
       <td><%= link_to 'Edit', edit_todo_path(todo) %></td>
       <td><%= link_to "Delete", todo_path(todo), method: :delete, data:{confirm: "Are you sure"} %></td>
     </tr>
