@@ -37,6 +37,7 @@ class TodosController < ApplicationController
   end
 
   def destroy
+    @todos = Todo.find(params[:id])
   end
 
   private
